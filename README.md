@@ -1,3 +1,5 @@
+![TwitchPlaysRCCar](https://i.imgur.com/eR6Gai3.png)
+
 # TwitchPlaysRCCar
 When given the task to connect an RC car to the internet, I was dumbfounded. I had no idea what I could do with that. I brainstormed for a little bit and realised I could try to control it over a certain medium. I could create my own NodeJS web service to do this, but that is just too much and not as fun let alone the time needed for completing that. Then I was reminded of the TwitchPlays channel, where people control characters in video games to try and complete the game. What about control an RC car?
 

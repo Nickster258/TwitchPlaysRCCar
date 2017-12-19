@@ -12,6 +12,7 @@ const int PACKETSIZE = 6;
 byte packet[PACKETSIZE];
 int radioChannel = 131;
 byte address[6] = {"[REDACTED]"};
+
 void setup() {
   pinMode(10, OUTPUT);
   Serial.begin(115200);
@@ -21,6 +22,7 @@ void setup() {
   radio.openReadingPipe(1,address);
   radio.startListening();
 }
+
 void loop() {
   if (radio.available()) {
     int *intPacket = (int *)packet;
@@ -35,15 +37,7 @@ void loop() {
   delay(10);
 }
 
-void sendToMotors( int x, int y) {
-  if ((x > 150) || (x < -150)) {
-    motorA.run(x);
-  } else {
-    motorA.run(0);
-  }
-  if ((y > 150) || (y < -150)) {
-    motorB.run(y);
-  } else {
-    motorB.run(0);
-  }
+void sendToMotors(int x, int y) {
+  motorA.run(((x > 150) || (x < -150)) * x);
+  motorB.run(((y > 150) || (y < -150)) * y);
 }

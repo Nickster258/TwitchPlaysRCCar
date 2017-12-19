@@ -97,8 +97,7 @@ void loop() {
 // Reads the analog signal from the potentiometer.
 // I would have used a switch, but that was unavailable.
 boolean ircControl() {
-  if (analogRead(A2) > 512) return true;
-  return false;
+  return (analogRead(A2) > 512) ? true : false;
 }
 
 // Takes the stream of characters and puts it in a String.
